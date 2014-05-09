@@ -1,6 +1,6 @@
 {
   "name": "hexo-renderer-stylus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stylus renderer plugin for Hexo",
   "main": "index",
   "repository": {
@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "stylus": "^0.44.0",
-    "nib": "^1.0.2",
-    "lodash": "^2.4.1"
+    "nib": "^1.0.2"
   }
 }
