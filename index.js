@@ -1,5 +1,13 @@
 var stylus = require('stylus'),
-  nib = require('nib');
+  nib = require('nib'),
+  _ = require('lodash');
+
+// Default config
+hexo.config = _.extend({
+  stylus: {
+    compress: false
+  }
+}, hexo.config);
 
 var getProperty = function(obj, key){
   key = key.replace(/\[(\w+)\]/g, '.$1').replace(/^\./, '');

@@ -1,6 +1,6 @@
 # [Stylus] renderer
 
-Add support for [Stylus], including [nib].
+Add support for [Stylus] with [nib]
 
 ## Install
 
