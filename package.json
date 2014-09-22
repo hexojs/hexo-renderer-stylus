@@ -25,7 +25,7 @@
     "url": "https://raw.github.com/tommy351/hexo/master/LICENSE"
   },
   "dependencies": {
-    "stylus": "^0.44.0",
+    "stylus": "^0.48.0",
     "nib": "^1.0.2"
   }
 }
