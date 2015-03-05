@@ -1,6 +1,6 @@
 {
   "name": "hexo-renderer-stylus",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Stylus renderer plugin for Hexo",
   "main": "index",
   "scripts": {

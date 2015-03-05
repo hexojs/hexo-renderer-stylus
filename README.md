@@ -10,6 +10,9 @@ Add support for [Stylus] with [nib].
 $ npm install hexo-renderer-stylus --save
 ```
 
+- Hexo 3: >= 0.2
+- Hexo 2: 0.1.x
+
 ## Options
 
 You can configure this plugin in `_config.yml`.
