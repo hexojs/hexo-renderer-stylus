@@ -82,8 +82,6 @@ describe('Stylus renderer', function(){
     r({text: body}, {}, function(err, result){
       if (err) throw err;
 
-      console.log(result);
-
       result.should.eql([
         '.foo {',
         '  content: 1;',
