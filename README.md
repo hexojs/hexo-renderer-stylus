@@ -20,9 +20,22 @@ You can configure this plugin in `_config.yml`.
 ``` yaml
 stylus:
   compress: false
+  sourcemaps:
+    comment: true
+    inline: true
+    sourceRoot: ''
+    basePath: .
 ```
 
-- **compress** - Compress generated CSS
+- **Stylus**:
+  - **compress** - Compress generated CSS (default: `false`)
+
+
+- **Sourcemaps**
+  - **comment** - Adds a comment with the `sourceMappingURL` to the generated CSS (default: `true`)
+  - **inline** - Inlines the sourcemap with full source text in base64 format (default: `false`)
+  - **sourceRoot** - `sourceRoot` property of the generated sourcemap
+  - **basePath** - Base path from which sourcemap and all sources are relative (default: `.`)
 
 [Stylus]: http://learnboost.github.io/stylus/
 [nib]: http://visionmedia.github.io/nib/
