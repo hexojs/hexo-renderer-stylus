@@ -38,4 +38,4 @@ stylus:
   - **basePath** - Base path from which sourcemap and all sources are relative (default: `.`)
 
 [Stylus]: http://learnboost.github.io/stylus/
-[nib]: http://visionmedia.github.io/nib/
+[nib]: http://tj.github.io/nib/
