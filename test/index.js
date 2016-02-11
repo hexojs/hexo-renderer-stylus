@@ -1,6 +1,8 @@
-var should = require('chai').should();
+'use strict';
 
-describe('Stylus renderer', function(){
+var should = require('chai').should(); // eslint-disable-line
+
+describe('Stylus renderer', function() {
   var ctx = {
     config: {
       stylus: {
@@ -19,13 +21,13 @@ describe('Stylus renderer', function(){
 
   var r = require('../lib/renderer').bind(ctx);
 
-  it('default', function(){
+  it('default', function() {
     var body = [
       '.foo',
       '  color: red'
     ].join('\n');
 
-    r({text: body}, {}, function(err, result){
+    r({text: body}, {}, function(err, result) {
       if (err) throw err;
 
       result.should.eql([
@@ -36,7 +38,7 @@ describe('Stylus renderer', function(){
     });
   });
 
-  it('compress', function(){
+  it('compress', function() {
     ctx.config.stylus.compress = true;
 
     var body = [
@@ -44,7 +46,7 @@ describe('Stylus renderer', function(){
       '  color: red'
     ].join('\n');
 
-    r({text: body}, {}, function(err, result){
+    r({text: body}, {}, function(err, result) {
       if (err) throw err;
 
       ctx.config.stylus.compress = false;
@@ -52,7 +54,7 @@ describe('Stylus renderer', function(){
     });
   });
 
-  it('hexo-config', function(){
+  it('hexo-config', function() {
     var body = [
       // first depth and exist
       '.foo',
@@ -79,7 +81,7 @@ describe('Stylus renderer', function(){
       '  content: hexo-config("foo.test")'
     ].join('\n');
 
-    r({text: body}, {}, function(err, result){
+    r({text: body}, {}, function(err, result) {
       if (err) throw err;
 
       result.should.eql([
