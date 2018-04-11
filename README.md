@@ -39,4 +39,4 @@ stylus:
   - **basePath** - Base path from which sourcemap and all sources are relative (default: `.`)
 
 [Stylus]: http://stylus-lang.com/
-[nib]: http://tj.github.io/nib/
+[nib]: http://stylus.github.io/nib/
