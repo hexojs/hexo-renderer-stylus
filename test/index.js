@@ -38,10 +38,10 @@ describe('Stylus renderer', function() {
 
       ctx.config.stylus = config;
       result.should.eql([
-          '.foo {',
-          '  color: #f00;',
-          '}'
-        ].join('\n') + '\n');
+        '.foo {',
+        '  color: #f00;',
+        '}'
+      ].join('\n') + '\n');
     });
   });
 
@@ -55,10 +55,10 @@ describe('Stylus renderer', function() {
       if (err) throw err;
 
       result.should.eql([
-          '.foo {',
-          '  color: #f00;',
-          '}'
-        ].join('\n') + '\n');
+        '.foo {',
+        '  color: #f00;',
+        '}'
+      ].join('\n') + '\n');
     });
   });
 
