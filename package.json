@@ -12,6 +12,10 @@
   "directories": {
     "lib": "./lib"
   },
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "repository": "hexojs/hexo-renderer-stylus",
   "keywords": [
     "hexo",
