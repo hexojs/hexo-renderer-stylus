@@ -1,17 +1,20 @@
 {
   "name": "hexo-renderer-stylus",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "Stylus renderer plugin for Hexo",
   "main": "index",
   "scripts": {
     "eslint": "eslint .",
-    "jscs": "jscs .",
     "test": "mocha test/index.js",
     "test-cov": "istanbul cover --print both _mocha -- test/index.js"
   },
   "directories": {
     "lib": "./lib"
   },
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "repository": "hexojs/hexo-renderer-stylus",
   "keywords": [
     "hexo",
@@ -25,17 +28,15 @@
   "author": "Tommy Chen <tommy351@gmail.com> (http://zespia.tw)",
   "license": "MIT",
   "dependencies": {
-    "stylus": "^0.53.0",
-    "nib": "^1.1.0"
+    "stylus": "^0.54.5",
+    "nib": "^1.1.2"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-as-promised": "^5.2.0",
-    "eslint": "^1.10.3",
-    "eslint-config-hexo": "^1.0.2",
-    "istanbul": "^0.4.2",
-    "jscs": "^2.9.0",
-    "jscs-preset-hexo": "^1.0.1",
-    "mocha": "^2.4.5"
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^5.9.0",
+    "eslint-config-hexo": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.0.0"
   }
 }

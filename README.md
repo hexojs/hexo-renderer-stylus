@@ -6,12 +6,13 @@ Add support for [Stylus] with [nib].
 
 ## Install
 
+Prerequisites:
+- Hexo 3: >= 0.2
+- Hexo 2: 0.1.x
+
 ``` bash
 $ npm install hexo-renderer-stylus --save
 ```
-
-- Hexo 3: >= 0.2
-- Hexo 2: 0.1.x
 
 ## Options
 
@@ -37,5 +38,5 @@ stylus:
   - **sourceRoot** - `sourceRoot` property of the generated sourcemap
   - **basePath** - Base path from which sourcemap and all sources are relative (default: `.`)
 
-[Stylus]: http://learnboost.github.io/stylus/
-[nib]: http://tj.github.io/nib/
+[Stylus]: http://stylus-lang.com/
+[nib]: http://stylus.github.io/nib/

@@ -14,12 +14,36 @@ describe('Stylus renderer', function() {
         foo: 1,
         bar: {
           baz: 2
+        },
+        nil: null,
+        obj: {
+          arr: [1, 2, 3]
         }
       }
     }
   };
 
   var r = require('../lib/renderer').bind(ctx);
+
+  it('no config', function() {
+    var body = [
+      '.foo',
+      '  color: red'
+    ].join('\n');
+    var config = ctx.config.stylus;
+
+    ctx.config.stylus = null;
+    r({text: body}, {}, function(err, result) {
+      if (err) throw err;
+
+      ctx.config.stylus = config;
+      result.should.eql([
+        '.foo {',
+        '  color: #f00;',
+        '}'
+      ].join('\n') + '\n');
+    });
+  });
 
   it('default', function() {
     var body = [
@@ -78,7 +102,16 @@ describe('Stylus renderer', function() {
       '',
       // try to get nested attribute in non-object
       '.app',
-      '  content: hexo-config("foo.test")'
+      '  content: hexo-config("foo.test")',
+      '',
+      // nil attribute
+      '.nil',
+      '  content: hexo-config("nil")',
+      '',
+      // object attribute
+      '.obj',
+      '  for i in hexo-config("obj.arr")',
+      '    content: i'
     ].join('\n');
 
     r({text: body}, {}, function(err, result) {
@@ -102,6 +135,14 @@ describe('Stylus renderer', function() {
         '}',
         '.app {',
         '  content: \'\';',
+        '}',
+        '.nil {',
+        '  content: \'\';',
+        '}',
+        '.obj {',
+        '  content: 1;',
+        '  content: 2;',
+        '  content: 3;',
         '}'
       ].join('\n') + '\n');
     });
