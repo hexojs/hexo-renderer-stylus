@@ -26,6 +26,8 @@ stylus:
     inline: true
     sourceRoot: ''
     basePath: .
+  plugins:
+    - plugin-module-name
 ```
 
 - **Stylus**:
@@ -37,6 +39,9 @@ stylus:
   - **inline** - Inlines the sourcemap with full source text in base64 format (default: `false`)
   - **sourceRoot** - `sourceRoot` property of the generated sourcemap
   - **basePath** - Base path from which sourcemap and all sources are relative (default: `.`)
+  
+- ** Plugins
+  - **moduleName** - name of stylus plugin to include into `use` of stylus configuration
 
 [Stylus]: http://stylus-lang.com/
 [nib]: http://stylus.github.io/nib/
