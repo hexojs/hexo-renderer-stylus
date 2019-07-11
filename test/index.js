@@ -1,9 +1,9 @@
 'use strict';
 
-var should = require('chai').should(); // eslint-disable-line
+const should = require('chai').should(); // eslint-disable-line
 
-describe('Stylus renderer', function() {
-  var ctx = {
+describe('Stylus renderer', () => {
+  const ctx = {
     config: {
       stylus: {
         compress: false
@@ -23,17 +23,17 @@ describe('Stylus renderer', function() {
     }
   };
 
-  var r = require('../lib/renderer').bind(ctx);
+  const r = require('../lib/renderer').bind(ctx);
 
-  it('no config', function() {
-    var body = [
+  it('no config', () => {
+    const body = [
       '.foo',
       '  color: red'
     ].join('\n');
-    var config = ctx.config.stylus;
+    const config = ctx.config.stylus;
 
     ctx.config.stylus = null;
-    r({text: body}, {}, function(err, result) {
+    r({text: body}, {}, (err, result) => {
       if (err) throw err;
 
       ctx.config.stylus = config;
@@ -45,13 +45,13 @@ describe('Stylus renderer', function() {
     });
   });
 
-  it('default', function() {
-    var body = [
+  it('default', () => {
+    const body = [
       '.foo',
       '  color: red'
     ].join('\n');
 
-    r({text: body}, {}, function(err, result) {
+    r({text: body}, {}, (err, result) => {
       if (err) throw err;
 
       result.should.eql([
@@ -62,15 +62,15 @@ describe('Stylus renderer', function() {
     });
   });
 
-  it('compress', function() {
+  it('compress', () => {
     ctx.config.stylus.compress = true;
 
-    var body = [
+    const body = [
       '.foo',
       '  color: red'
     ].join('\n');
 
-    r({text: body}, {}, function(err, result) {
+    r({text: body}, {}, (err, result) => {
       if (err) throw err;
 
       ctx.config.stylus.compress = false;
@@ -78,8 +78,8 @@ describe('Stylus renderer', function() {
     });
   });
 
-  it('hexo-config', function() {
-    var body = [
+  it('hexo-config', () => {
+    const body = [
       // first depth and exist
       '.foo',
       '  content: hexo-config("foo")',
@@ -114,7 +114,7 @@ describe('Stylus renderer', function() {
       '    content: i'
     ].join('\n');
 
-    r({text: body}, {}, function(err, result) {
+    r({text: body}, {}, (err, result) => {
       if (err) throw err;
 
       result.should.eql([
