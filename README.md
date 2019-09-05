@@ -4,7 +4,7 @@
 [![NPM version](https://badge.fury.io/js/hexo-renderer-stylus.svg)](https://www.npmjs.com/package/hexo-renderer-stylus)
 [![Coverage Status](https://img.shields.io/coveralls/hexojs/hexo-renderer-stylus.svg)](https://coveralls.io/r/hexojs/hexo-renderer-stylus?branch=master)
 
-Add support for [Stylus] with [nib].
+Add support for [Stylus] with [nib] and other plugins.
 
 ## Install
 
@@ -28,17 +28,16 @@ stylus:
     inline: true
     sourceRoot: ''
     basePath: .
+  plugins: 'nib'
 ```
 
-- **Stylus**:
-  - **compress** - Compress generated CSS (default: `false`)
-
-
-- **Sourcemaps**
+- **compress** - Compress generated CSS (default: `false`)
+- **sourcemaps**
   - **comment** - Adds a comment with the `sourceMappingURL` to the generated CSS (default: `true`)
   - **inline** - Inlines the sourcemap with full source text in base64 format (default: `false`)
   - **sourceRoot** - `sourceRoot` property of the generated sourcemap
   - **basePath** - Base path from which sourcemap and all sources are relative (default: `.`)
+- **plugins** - Stylus plugin(s) (default: `nib`)
 
 [Stylus]: http://stylus-lang.com/
 [nib]: http://stylus.github.io/nib/
