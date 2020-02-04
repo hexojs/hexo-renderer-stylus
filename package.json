@@ -28,14 +28,15 @@
   "author": "Tommy Chen <tommy351@gmail.com> (http://zespia.tw)",
   "license": "MIT",
   "dependencies": {
-    "stylus": "^0.54.5",
-    "nib": "^1.1.2"
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^6.0.1",
     "eslint-config-hexo": "^4.0.0",
+    "hexo": "^4.2.0",
     "mocha": "^6.0.0",
     "nyc": "^15.0.0"
   },
