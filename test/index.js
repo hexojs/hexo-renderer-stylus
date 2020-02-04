@@ -151,7 +151,7 @@ describe('Stylus renderer', () => {
   });
 
   describe('exec filter to extend', () => {
-    it('should execute filter registered to stylus', () => {
+    it('should execute filter registered to stylus:renderer', () => {
       const hexo = new Hexo(__dirname, {silent: true});
       Object.assign(hexo, {
         config: {
@@ -160,7 +160,7 @@ describe('Stylus renderer', () => {
           }
         }
       });
-      hexo.extend.filter.register('stylus', style => {
+      hexo.extend.filter.register('stylus:renderer', style => {
         style.define('examples', () => {
           return 'foo';
         });
