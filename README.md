@@ -54,19 +54,20 @@ div
 You can refer to a variable:
 ```stylus
 div
- color convert(hexo-config("color"))
+ color convert(hexo-config("moody_red"))
 ```
 
-And in your theme's configuration, you can define this variable:
+And in your **theme's** configuration, you can define this variable:
 ```yml
-color: "#FFCC44"
+moody_red: "#8B0001"
 ```
+
 (The "convert" function above is here to convert the string into an actual stylus color)
 
 You can also use the theme_config variable in the main `_config.yml`:
 ```yml
 theme_config:
-  color: "#FFCC44"
+  moody_red: "#8B0001"
 ```
 
 [Stylus]: http://stylus-lang.com/
