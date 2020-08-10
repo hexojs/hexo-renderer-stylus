@@ -39,6 +39,37 @@ stylus:
   - **basePath** - Base path from which sourcemap and all sources are relative (default: `.`)
 - **plugins** - Stylus plugin(s) (default: `nib`)
 
+## Setting Stylus variables
+
+It is possible to set variables that can be used in Stylus.
+The purpose of setting variable is to avoid direct modification of the Sylus code,
+and thus to make themes more generic
+
+For example, instead of hardcoding:
+```stylus
+div
+ color #FFCC44
+```
+
+You can refer to a variable:
+```stylus
+div
+ color convert(hexo-config("moody_red"))
+```
+
+And in your **theme's** configuration, you can define this variable:
+```yml
+moody_red: "#8B0001"
+```
+
+(The "convert" function above is here to convert the string into an actual stylus color)
+
+You can also use the theme_config variable in the main `_config.yml`:
+```yml
+theme_config:
+  moody_red: "#8B0001"
+```
+
 [Stylus]: http://stylus-lang.com/
 [nib]: http://stylus.github.io/nib/
 
