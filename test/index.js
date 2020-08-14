@@ -1,9 +1,11 @@
 'use strict';
 
 const should = require('chai').should(); // eslint-disable-line
+const Hexo = require('hexo');
 
 describe('Stylus renderer', () => {
-  const ctx = {
+  const hexo = new Hexo(__dirname, {silent: true});
+  const ctx = Object.assign(hexo, {
     config: {
       stylus: {
         compress: false
@@ -21,7 +23,7 @@ describe('Stylus renderer', () => {
         }
       }
     }
-  };
+  });
 
   const r = require('../lib/renderer').bind(ctx);
 
@@ -147,4 +149,37 @@ describe('Stylus renderer', () => {
       ].join('\n') + '\n');
     });
   });
+
+  describe('exec filter to extend', () => {
+    it('should execute filter registered to stylus:renderer', () => {
+      const hexo = new Hexo(__dirname, {silent: true});
+      Object.assign(hexo, {
+        config: {
+          stylus: {
+            compress: false
+          }
+        }
+      });
+      hexo.extend.filter.register('stylus:renderer', style => {
+        style.define('examples', () => {
+          return 'foo';
+        });
+      });
+      const filterRender = require('../lib/renderer').bind(hexo);
+      const body = [
+        '.foo',
+        '  content: examples()',
+        ''
+      ].join('\n');
+      filterRender({text: body}, {}, (err, result) => {
+        if (err) throw err;
+        result.should.eql([
+          '.foo {',
+          '  content: \'foo\';',
+          '}'
+        ].join('\n') + '\n');
+      });
+    });
+  });
+
 });

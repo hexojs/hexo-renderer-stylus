@@ -72,3 +72,27 @@ theme_config:
 
 [Stylus]: http://stylus-lang.com/
 [nib]: http://stylus.github.io/nib/
+
+## Extensibility
+
+This plugin provide a filter `stylus:renderer` to allows you extend it. When there’s something you cannot do in Stylus, define it in JavaScript!
+
+For example, to define some global variable:
+
+```js
+hexo.extend.filter.register('stylus:renderer', function(style) {
+  style
+    // we may define a global variable by passing a `Node`
+    .define('has-canvas', require('stylus').nodes.false);
+    // stylus also casts JavaScript values to their Stylus equivalents when possible
+    .define('families', ['Helvetica Neue', 'Helvetica', 'sans-serif'])
+    // also allows you to provide a JavaScript-defined function to Stylus
+    .define('get-list', function(){
+      return ['foo', 'bar', 'baz'];
+    });
+})
+```
+
+Save the file in "scripts/" folder and run Hexo as usual.
+
+Notice: for more JavaScript api, refer to stylus's [documentation](http://stylus-lang.com/docs/js.html).
