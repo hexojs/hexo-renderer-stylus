@@ -1,44 +1,43 @@
 'use strict';
 
-const should = require('chai').should(); // eslint-disable-line
+require('chai').should();
 const Hexo = require('hexo');
 
 describe('Stylus renderer', () => {
   const hexo = new Hexo(__dirname, {silent: true});
-  const ctx = Object.assign(hexo, {
-    config: {
-      stylus: {
-        compress: false
-      }
-    },
-    theme: {
-      config: {
-        foo: 1,
-        bar: {
-          baz: 2
-        },
-        nil: null,
-        obj: {
-          arr: [1, 2, 3]
-        }
-      }
+  const defaultCfg = JSON.parse(JSON.stringify(Object.assign(hexo.config, {
+    stylus: {
+      compress: false
     }
-  });
+  })));
+  const themeCfg = JSON.parse(JSON.stringify(Object.assign(hexo.theme.config, {
+    foo: 1,
+    bar: {
+      baz: 2
+    },
+    nil: null,
+    obj: {
+      arr: [1, 2, 3]
+    }
+  })));
 
-  const r = require('../lib/renderer').bind(ctx);
+  const r = require('../lib/renderer').bind(hexo);
+
+  beforeEach(() => {
+    hexo.config = JSON.parse(JSON.stringify(defaultCfg));
+    hexo.theme.config = JSON.parse(JSON.stringify(themeCfg));
+  });
 
   it('no config', () => {
     const body = [
       '.foo',
       '  color: red'
     ].join('\n');
-    const config = ctx.config.stylus;
 
-    ctx.config.stylus = null;
+    hexo.config.stylus = {};
     r({text: body}, {}, (err, result) => {
       if (err) throw err;
 
-      ctx.config.stylus = config;
       result.should.eql([
         '.foo {',
         '  color: #f00;',
@@ -65,7 +64,7 @@ describe('Stylus renderer', () => {
   });
 
   it('compress', () => {
-    ctx.config.stylus.compress = true;
+    hexo.config.stylus.compress = true;
 
     const body = [
       '.foo',
@@ -75,7 +74,6 @@ describe('Stylus renderer', () => {
     r({text: body}, {}, (err, result) => {
       if (err) throw err;
 
-      ctx.config.stylus.compress = false;
       result.should.eql('.foo{color:#f00}');
     });
   });
@@ -181,5 +179,4 @@ describe('Stylus renderer', () => {
       });
     });
   });
-
 });
