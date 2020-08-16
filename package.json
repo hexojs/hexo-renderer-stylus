@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "nib": "^1.1.2",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.8"
   },
   "devDependencies": {
     "chai": "^4.2.0",
