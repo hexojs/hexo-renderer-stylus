@@ -180,9 +180,9 @@ describe('Stylus renderer', () => {
     });
 
     describe('nunjucks', () => {
-      const { join } = require('path');
       const hexo = new Hexo(__dirname, { silent: true });
       const loremFn = () => { return 'ipsum'; };
+      const engine = 'styl';
 
       before(async () => {
         await hexo.init();
@@ -191,7 +191,7 @@ describe('Stylus renderer', () => {
       });
 
       it('default', async () => {
-        const result = await hexo.post.render(join(__dirname, 'fixtures', 'foo.styl'), { content: 'foo\n  bar: "{% lorem %}"' });
+        const result = await hexo.post.render(null, { content: 'foo\n  bar: "{% lorem %}"', engine });
         result.content.should.eql('foo {\n  bar: "{% lorem %}";\n}\n');
       });
 
@@ -200,7 +200,7 @@ describe('Stylus renderer', () => {
         renderer.disableNunjucks = false;
         hexo.extend.renderer.register('styl', 'css', renderer);
 
-        const result = await hexo.post.render(join(__dirname, 'fixtures', 'foo.styl'), { content: 'foo\n  bar: "{% lorem %}"' });
+        const result = await hexo.post.render(null, { content: 'foo\n  bar: "{% lorem %}"', engine });
         result.content.should.eql('foo {\n  bar: "' + loremFn() + '";\n}\n');
       });
     });
