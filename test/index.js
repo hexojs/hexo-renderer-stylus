@@ -178,5 +178,31 @@ describe('Stylus renderer', () => {
         ].join('\n') + '\n');
       });
     });
+
+    describe('nunjucks', () => {
+      const { join } = require('path');
+      const hexo = new Hexo(__dirname, { silent: true });
+      const loremFn = () => { return 'ipsum'; };
+
+      before(async () => {
+        await hexo.init();
+        hexo.extend.tag.register('lorem', loremFn);
+        hexo.extend.renderer.register('styl', 'css', require('../lib/renderer'));
+      });
+
+      it('default', async () => {
+        const result = await hexo.post.render(join(__dirname, 'fixtures', 'foo.styl'), { content: 'foo\n  bar: "{% lorem %}"' });
+        result.content.should.eql('foo {\n  bar: "{% lorem %}";\n}\n');
+      });
+
+      it('disable disabelNunjucks', async () => {
+        const renderer = hexo.render.renderer.get('styl');
+        renderer.disableNunjucks = false;
+        hexo.extend.renderer.register('styl', 'css', renderer);
+
+        const result = await hexo.post.render(join(__dirname, 'fixtures', 'foo.styl'), { content: 'foo\n  bar: "{% lorem %}"' });
+        result.content.should.eql('foo {\n  bar: "' + loremFn() + '";\n}\n');
+      });
+    });
   });
 });
