@@ -42,7 +42,7 @@ stylus:
 ## Setting Stylus variables
 
 It is possible to set variables that can be used in Stylus.
-The purpose of setting variable is to avoid direct modification of the Sylus code,
+The purpose of setting variable is to avoid direct modification of the Stylus code,
 and thus to make themes more generic
 
 For example, instead of hardcoding:
@@ -75,7 +75,7 @@ theme_config:
 
 ## Extensibility
 
-This plugin provide a filter `stylus:renderer` to allows you extend it. When there’s something you cannot do in Stylus, define it in JavaScript!
+This plugin provide a filter `stylus:renderer` to allows you extend it. When there's something you cannot do in Stylus, define it in JavaScript!
 
 For example, to define some global variable:
 
