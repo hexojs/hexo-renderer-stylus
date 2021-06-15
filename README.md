@@ -37,7 +37,7 @@ stylus:
   - **inline** - Inlines the sourcemap with full source text in base64 format (default: `false`)
   - **sourceRoot** - `sourceRoot` property of the generated sourcemap
   - **basePath** - Base path from which sourcemap and all sources are relative (default: `.`)
-- **plugins** - Stylus plugin(s) (default: `nib`)
+- **plugins** - Stylus plugin(s) (default: `nib`, set `''` to disable all plugins)
 
 ## Setting Stylus variables
 
