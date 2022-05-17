@@ -1,6 +1,6 @@
 {
   "name": "hexo-renderer-stylus",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Stylus renderer plugin for Hexo",
   "main": "index",
   "scripts": {
@@ -28,7 +28,7 @@
   "author": "Tommy Chen <tommy351@gmail.com> (http://zespia.tw)",
   "license": "MIT",
   "dependencies": {
-    "nib": "^1.1.2",
+    "nib": "^1.2.0",
     "stylus": "^0.57.0"
   },
   "devDependencies": {
