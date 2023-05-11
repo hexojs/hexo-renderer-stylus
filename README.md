@@ -70,8 +70,8 @@ theme_config:
   moody_red: "#8B0001"
 ```
 
-[Stylus]: http://stylus-lang.com/
-[nib]: http://stylus.github.io/nib/
+[Stylus]: https://stylus-lang.com/
+[nib]: https://stylus.github.io/nib/
 
 ## Extensibility
 
@@ -95,4 +95,4 @@ hexo.extend.filter.register('stylus:renderer', function(style) {
 
 Save the file in "scripts/" folder and run Hexo as usual.
 
-Notice: for more JavaScript api, refer to stylus's [documentation](http://stylus-lang.com/docs/js.html).
+Notice: for more JavaScript api, refer to stylus's [documentation](https://stylus-lang.com/docs/js.html).
