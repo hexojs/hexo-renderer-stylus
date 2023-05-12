@@ -32,8 +32,7 @@
     "stylus": "^0.59.0"
   },
   "devDependencies": {
-    "chai": "^4.3.4",
-    "chai-as-promised": "^7.1.1",
+    "chai": "^4.3.7",
     "eslint": "^8.5.0",
     "eslint-config-hexo": "^5.0.0",
     "hexo": "^6.0.0",
