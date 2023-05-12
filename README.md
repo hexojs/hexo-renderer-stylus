@@ -1,6 +1,6 @@
 # hexo-renderer-stylus
 
-[![Build Status](https://travis-ci.org/hexojs/hexo-renderer-stylus.svg?branch=master)](https://travis-ci.org/hexojs/hexo-renderer-stylus)
+[![Build Status](https://github.com/hexojs/hexo-renderer-stylus/workflows/Tester/badge.svg)](https://github.com/hexojs/hexo-renderer-stylus/actions/workflows/tester.yml)
 [![NPM version](https://badge.fury.io/js/hexo-renderer-stylus.svg)](https://www.npmjs.com/package/hexo-renderer-stylus)
 [![Coverage Status](https://img.shields.io/coveralls/hexojs/hexo-renderer-stylus.svg)](https://coveralls.io/r/hexojs/hexo-renderer-stylus?branch=master)
 
