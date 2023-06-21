@@ -32,7 +32,7 @@
     "stylus": "^0.59.0"
   },
   "devDependencies": {
-    "c8": "^7.13.0",
+    "c8": "^8.0.0",
     "chai": "^4.3.7",
     "eslint": "^8.40.0",
     "eslint-config-hexo": "^5.0.0",
